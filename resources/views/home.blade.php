@@ -17,15 +17,14 @@
  
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="home">home <span class="sr-only"></span></a>
+          <a class="nav-link" href="{{url('home')}}">home <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pengaduan">pengaduan</a>
+          <a class="nav-link" href="{{url('isi_pengaduan')}}">pengaduan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="hasil pengaduan">hasil pengaduan</a>
+          <a class="nav-link" href="{{url('hasil_laporan')}}">hasil laporan</a>
         </li>
-        
         
       </ul>
  

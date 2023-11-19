@@ -64,7 +64,7 @@
     </style>
    
     <body>
-   
+      <img src="{{ asset('/foto/mountain.jpg')}}" width="100px"/>
         <div class="login">
           <h1>Login Petugas</h1>
           
@@ -78,7 +78,7 @@
                 <input type="username" class="form-control" name="username"><br>
                 <label>Password</label><br>
                 <input type="password" name="password" required><br>
-                <a link href="{{('table_masyarakat ')}}"><button type="button"> Login</button></a>
+                <a link href="{{('table_petugas ')}}"><button type="button"> Login</button></a>
                 <a link href={{('register')}}><button type="button"> Belum Punya Akun?</button></a>
             </form>
         </div>     

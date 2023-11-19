@@ -9,7 +9,7 @@ class LoginPetugasController extends Controller
 {
     public function index(){
          
-        return view('auth.login_petugas');
+        return view('loginpetugas');
     }
 public function login(Request $request){
 

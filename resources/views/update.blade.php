@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>isi pengaduan</title>
-  <link rel="stylesheet" href={{asset("/bs/bs/css/bootstrap.min.css")}}>
+  <link rel="stylesheet" href={{asset("/bs/css/bootstrap.min.css")}}>
 
 </head>
 <body>

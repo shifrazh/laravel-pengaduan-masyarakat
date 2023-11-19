@@ -66,12 +66,12 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'session',
+            'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
         'petugas' =>
          [
-            'driver' => 'session',
+            'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
 

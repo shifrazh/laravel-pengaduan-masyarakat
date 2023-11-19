@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Masyarakat;
-use Illuminate\Support\Facades\DB;
-
 use App\Models\Pengaduan;
-
+use App\Models\Tanggapan;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Login1;
+use Illuminate\Support\Facades\update;
 
 class PengaduanController extends Controller
 {
+
     function index(){
 // query builder
 // $pengaduan = DB::table ('pengaduan')->get();
@@ -27,13 +30,13 @@ $pengaduan = pengaduan::all();
 
    }
 
-  function tampil_pengaduan(){
-    echo "Tampillll";
+   function tampil_pengaduan(){
+    return view ('isi_pengaduan');
+  }
   }
 
-
-function proses_tambah_pengaduan(Request $request){
-// validasi
+  function proses_tambah_pengaduan(Request $request){
+//validasi
 $nama_foto = $request->foto->getClientOriginalName();
 
 $request->validate([
@@ -59,11 +62,21 @@ function hapus($id){
   DB::table('pengaduan')->where('id_pengaduan', '=', $id)->delete();
 }
 
-  function detail_pengaduan ($id){
+  function detail ($id){
+    $Pengaduan = Pengaduan::where ('id_pengaduan', $id)->first();
+    //$Tanggapan = Tanggapan::where ('id_pengaduan', $id)->get();
+    $tanggapan = DB::table('tanggapan')
+    ->join('petugas', 'petugas.id', '=', 'tanggapan.id_petugas')
+    ->where('tanggapan.id_pengaduan', $id)
+    ->get();
+// select from tanggapan Join petugas
+    // return $tanggapan;
+    return view("detail_pengaduan", ["data"=> $pengaduan, 'tanggapan' => $tanggapan ]);
+
     $pengaduan= DB::table('pengaduan')
                 ->where('id_pengaduan', '=', $id)
                 ->first();
-    return view("detail_pengaduan", ["data"=> $pengaduan]);
+    
   }
 
 function update($id){
@@ -76,10 +89,13 @@ function login1(){
   return view ('login1');
 }
 
-function register(){
-  return view ('register');
-}
 function about(){
   return view ('about');
 }
+function pengaduan(){
+  return view ('halaman_pengaduan');
 }
+function hasillaporan(){
+  return view ('hasil_laporan');
+}
+

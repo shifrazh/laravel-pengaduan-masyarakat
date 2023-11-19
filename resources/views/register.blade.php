@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
+      
         <title> Register</title>
         <link rel="stylesheet" href="bs/css/bootstrap.min.css">
     </head>
@@ -68,8 +69,8 @@
           <h1>Register</h1>
             <form action="register" method="POST">
               @method('POST')
-              <label>Nik</label><br>
-                <input type="nama" class="form-control" name="Nik"><br>
+                <label>Nik</label><br>
+                <input type="nik" class="form-control" name="Nik"><br>
                 <label>Nama</label><br>
                 <input type="nama" class="form-control" name="Nama"><br>
                 <label>Username</label><br>
@@ -77,9 +78,9 @@
                 <label>Password</label><br>
                 <input type="password" name="password" required><br>
                 <label>Telp</label><br>
-                <input type="telp" name="password" required><br>
-                <a link href="{{('table_masyarakat ')}}"><button type="button"> Login</button></a>
-                <a link href="{{('registrasi')}}"><button type="button"> Belum Punya Akun?</button></a>
+                <input type="telp" name="telp" required><br>
+                <a link href="{{('table_masyarakat')}}"><button type="button"> Login</button></a>
+                <a link href="{{('register')}}"><button type="button"> Belum Punya Akun?</button></a>
             </form>
         </div>     
     </body>

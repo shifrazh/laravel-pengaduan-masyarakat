@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\facades\Auth;
 use Illuminate\Support\facades\Hash;
 use Illuminate\Support\facadees\Session;
-
-class login1Controller extends Controlller
+use App\Http\Controllers\Controller;
+class login1Controller extends Controller
 {
 function index(){
+    
     return view("login1");
 }
 function login(Request $request){
@@ -24,7 +25,7 @@ function login(Request $request){
 function logout(){
     Auth::logout();
 
-    return redirect('/logout');
+    return redirect("/logout");
 }
 }
 

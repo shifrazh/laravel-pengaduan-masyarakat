@@ -1,8 +1,12 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title> Register</title>
+        <title> Daftar</title>
         <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="daftar">
+    <h2>register</h2
     </head>
     <style>
       *{
@@ -66,15 +70,19 @@
     <body>
         <div class="daftar">
           <h1>Register Petugas</h1>
-            <form action="login" method="POST">
-                <label>Nama</label><br>
-                <input type="nama" class="form-control" name="Nama"><br>
-                <label>Username</label><br>
-                <input type="username" name="password" required><br>
-                <label>Password</label><br>
+            <form action="register" method="POST">
+                <label>id_petugas</label><br>
+                <input type="nik" class="form-control" name="id_petugas"><br>
+                method('POST')
+                @csrf
+                <label>nama_petugas</label><br>
+                <input type="nama" class="form-control" name="nama_petugas"><br>
+                <label>username</label><br>
+                <input type="username" name="username" required><br>
+                <label>password</label><br>
                 <input type="password" name="password" required><br>
-                <label>Telp</label><br>
-                <input type="telp" name="password" required><br>
+                <label>telp</label><br>
+                <input type="telp" name="telp" required><br>
                 <a link href="{{('table_masyarakat ')}}"><button type="button"> Login</button></a>
                 <a link href="{{('registrasi')}}"><button type="button"> Belum Punya Akun?</button></a>
             </form>

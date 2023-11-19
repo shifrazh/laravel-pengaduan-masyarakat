@@ -1,15 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <title>proses isi pegaduan</title>
+    <link rel="stylesheet" href={{ asset("bs/css/bootstrap.min.css") }}>
+    <title>document</title>
 </head>
 <body>
-  @include('layout.navbar')
-</body>
-
+@include('layout.navbar')
+<form action="{{url('isi-pengaduan')}}" @method="POST" enctype="multipart/form-data">
+  @CSRF
+  @method ('POST')
     <div class="container">
     <label for="formFile" class="form-label">Bukti Foto</label>
         <input class="form-control" type="file" id="formFile" name="foto">
@@ -22,7 +24,6 @@
       <form action="home" method="POST">
   </div>
 </form>
-  </tbody>
-</table>
 </body>
 </html>
+

@@ -13,15 +13,15 @@ class PetugasController extends Controller
         }
 
 
-    function registrasi_petugas(request $request){
+    function register_petugas(request $request){
 
-$id_petugas = $request->id_petugas;
+        $id_petugas = $request->id_petugas;
         $nama_petugas = $request->nama_petugas;
         
         $username = $request->username;
         $password = $request->password;
         $telp = $request->telp;
-        $level = $request->level;
+       
 
 
        
@@ -31,14 +31,14 @@ $id_petugas = $request->id_petugas;
             'username' => $username,
             'password' => $password,
             'telp' => $telp,
-            'level' => $level
+          
         ]);
 
         return redirect('/login');
     }
 
 
-     function buatakunpetugas(){
-           return view('registrasipetugas');
+     function registerpetugas(){
+           return view('register_petugas');
         }
 }
